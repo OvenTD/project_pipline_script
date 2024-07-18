@@ -1,3 +1,9 @@
+#
+# This code is for asset folders.
+# Make folders from the name list.
+#
+
+
 import os
 
 def create_folders(names_list, base_directory):

@@ -1,3 +1,8 @@
+#
+# This code is for Bake and adjust first frame of the motion captured dataset. 
+# Search fbx file in root directory and perform them. 
+# adjust the first frame 1 to 1001.
+#
 import maya.cmds as cmds
 import math
 import os
