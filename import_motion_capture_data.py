@@ -82,9 +82,9 @@ class SceneProcessor:
         }
 
     def createInputWindow(self):
-        if cmds.window("InputSceneAndCut", exists=True):
-            cmds.deleteUI("InputSceneAndCut")
-        window = cmds.window("InputSceneAndCut", title="Input Scene and Cut", widthHeight=(300, 400))
+        if cmds.window("ImportMotionCapture", exists=True):
+            cmds.deleteUI("ImportMotionCapture")
+        window = cmds.window("ImportMotionCapture", title="Import Motion Capture", widthHeight=(300, 400))
         
         cmds.columnLayout(adjustableColumn=True)
         
@@ -95,7 +95,7 @@ class SceneProcessor:
         
         cmds.rowLayout(numberOfColumns=2, columnWidth2=(80, 200))
         cmds.text(label="Cut:")
-        self.cut_field = cmds.intField(annotation="Cut", value=15)
+        self.cut_field = cmds.intField(annotation="Cut", value=-1)
         cmds.setParent("..")
         
         cmds.rowLayout(numberOfColumns=2, columnWidth2=(80, 200))
@@ -161,6 +161,8 @@ class SceneProcessor:
         
         self.delete_unnecessary_hik_objects() # delete hik objects. 
 
+        print("!! motion capture import is finished !!")
+
     def create_humanik_character(self, *args):
         self.set_fkikblend_to_fk() # set fkikblend to fk controller.
         self.set_arms_offset_rotation()
@@ -201,7 +203,11 @@ class SceneProcessor:
         return fbx_file_paths, fbx_file_names
 
     def find_scene_cut_matched_files(self):
-        search_prefix = f'{self.scene}-{self.cut}'
+        if self.cut <= -1:
+            cut = ""
+        else:
+            cut = self.cut
+        search_prefix = f'{self.scene}-{cut}'
     
         matching_indices = [i for i, file_name in enumerate(self.fbx_file_names) if file_name.startswith(search_prefix)]
 
