@@ -5,7 +5,7 @@ def print_folder_names(path):
         # 선택한 경로에서 모든 항목을 검사
         for item in os.listdir(path):
             item_path = os.path.join(path, item)
-            # 해당 항목이 폴더인지 확인
+            # 해당 항목이 폴더인지 확인[]
             if os.path.isdir(item_path):
                 print(item)
     except Exception as e:
