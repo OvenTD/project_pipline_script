@@ -12,5 +12,5 @@ def print_folder_names(path):
         print(f"Error: {e}")
 
 # 사용할 경로를 지정
-selected_path = 'D:/Hijackers_Gdrive/Asset_reference/Square'
+selected_path = r'D:\Hijackers\MotionCaptureData\Baked'
 print_folder_names(selected_path)

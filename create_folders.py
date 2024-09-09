@@ -19,20 +19,18 @@ def create_folders(names_list, base_directory):
 
 # 예제 리스트와 기본 디렉토리 설정
 name_list = [
-    "Jibbitz_01",
-    "Jibbitz_02",
-    "Jibbitz_03",
-    "Jibbitz_04",
-    "Jibbitz_05",
-    "Jibbitz_06",
-    "Jibbitz_07",
-    "Jibbitz_08",
-    "Jibbitz_09",
-    "Jibbitz_10",
+    "Badge_01",
+    "Badge_02",
+    "Badge_03",
+    "Badge_04",
+    "Badge_05",
+    "Badge_06",
+    "Badge_07",
+    
  
 
 ]
   # 여기에 원하는 이름 리스트 추가
-base_directory = "D:/Hijackers_Gdrive/Asset_reference/Jibbitz"  # 여기에 기본 디렉토리 경로 입력
+base_directory = r"D:\Hijackers_Gdrive\Asset_reference\Badge"  # 여기에 기본 디렉토리 경로 입력
 
 create_folders(name_list, base_directory)

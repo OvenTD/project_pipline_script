@@ -57,7 +57,7 @@ def assign_material():
         if selected_objects:
             # Create AI Standard Surface material
             shader_name = f"TEX_{asset_name}"
-            shader = cmds.shadingNode('aiStandardSurface', asShader=True, name=shader_name)
+            shader = cmds.shadingNode('lambert', asShader=True, name=shader_name)
             
             # Assign material to selected objects
             for obj in selected_objects:

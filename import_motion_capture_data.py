@@ -78,7 +78,10 @@ class SceneProcessor:
         self.arm_offset_data = {
             'Bille': [0.413, -37.1, -1.46],
             'Hero': [0.053, -46.807, 2.471],
-            'Devi': [0.413, -37.1, -1.46]
+            'Devi': [0, -90, 0],
+            'Boy1': [0, -33.146, 0],
+            'Girl1': [0, -30.098, 0]
+
         }
 
     def createInputWindow(self):
