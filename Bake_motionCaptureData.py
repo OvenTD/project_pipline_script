@@ -78,7 +78,7 @@ def find_fbx_files(root_dir):
     
     return fbx_file_paths, fbx_file_names
 
-root_directory = 'D:/Hijackers/MotionCaptureData/OKcut'
+root_directory = 'D:/Hijackers/MotionCaptureData/OKcut/Scene02/Devi'
 
 fbx_file_paths, fbx_file_names = find_fbx_files(root_directory)
 
