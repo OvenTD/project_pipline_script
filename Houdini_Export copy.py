@@ -6,11 +6,37 @@ def files():
     folder_path = "D:/Houdini/Chance_Hair/Anim_Imort_01/ready" 
     return os.listdir(folder_path)
 
+def get_abc_file_list(directory_path):
+    """
+    Returns a list of .abc files in the specified directory.
 
+    Args:
+        directory_path (str): Path to the directory to search for .abc files.
+
+    Returns:
+        list: A list of .abc files in the directory.
+    """
+    try:
+        # Check if the directory exists
+        if not os.path.isdir(directory_path):
+            raise ValueError(f"The directory does not exist: {directory_path}")
+        
+        # Generate the list of .abc files
+        abc_files = [
+            file for file in os.listdir(directory_path) 
+            if file.endswith('.abc') and os.path.isfile(os.path.join(directory_path, file))
+        ]
+        return abc_files
+    
+    except Exception as e:
+        print(f"Error: {e}")
+        return []
 
 def main():
+    char_name = "Hero"
+    input_path = f"D:/Houdini/Hijackers/{char_name}/Input"
     Gdrive_path = "D:/GDrive/Houdini_render_state"
-    output_path = "D:/Houdini/Chance_Hair/1_output"
+    output_path = f"D:/Houdini/Hijackers/{char_name}/Output"
     hair_or_eyebrow = ["Hair","Eyebrow"]
     version = 1
 
@@ -24,6 +50,10 @@ def main():
     
     
     scene_cut_list = ['S04_0110']
+
+    input_file_list = get_abc_file_list(input_path)
+    print(input_file_list)
+
     
     #
     for scene_cut in scene_cut_list:
